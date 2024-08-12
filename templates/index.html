@@ -71,7 +71,7 @@
 <body>
     <h1>Input for Crop Recommender Model</h1>
 
-    <form id="form">
+    <form id="form" action="/predict" method="post">
 
         <div class="form-control">
             <label>
@@ -145,6 +145,9 @@
            <b> Predict best crop to grow in this soil </b>
         </button>
     </form>
+    {% if prediction_text %}
+    <div class="result">{{ prediction_text }}</div>
+    {% endif %}
 </body>
 
 </html>
