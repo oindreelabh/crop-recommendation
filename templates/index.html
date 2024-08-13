@@ -29,20 +29,24 @@
             box-shadow: 2px 5px 10px rgba(0, 0, 0, 0.5);
         }
 
-        /* Styling form-control Class */
+        .prediction {
+            background-color: #fff;
+            text-align: center;
+            margin: 50px auto;
+            padding: 30px 20px;
+            box-shadow: 2px 5px 10px rgba(0, 0, 0, 0.5);
+        }
+
         .form-control {
             text-align: left;
             margin-bottom: 25px;
         }
 
-        /* Styling form-control Label */
         .form-control label {
             display: block;
             margin-bottom: 10px;
         }
 
-        /* Styling form-control input, 
-        select, textarea */
         .form-control input,
         .form-control select {
             border: 1px solid #777;
@@ -145,9 +149,11 @@
            <b> Predict best crop to grow in this soil </b>
         </button>
     </form>
+    <div class="prediction">
     {% if prediction_text %}
-    <div class="result">{{ prediction_text }}</div>
+    <div class="result"><b>{{ prediction_text }}</b></div>
     {% endif %}
+    </div>
 </body>
 
 </html>

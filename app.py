@@ -30,7 +30,7 @@ def predict():
     # Make prediction
     prediction = model.predict(final_features)[0]
 
-    return render_template('index.html', prediction_text='Prediction: {}'.format(prediction))
+    return render_template('index.html', prediction_text='Best crop to grow in given conditions is : {}'.format(prediction))
 
 if __name__ == "__main__":
     app.run(debug=True)
