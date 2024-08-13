@@ -26,8 +26,6 @@ def predict():
     test_row = [nitrogen_content, phosphorus_content, potassium_content, temp, humidity, ph_content, rainfall]
     test_row = [float(x) for x in test_row]
     final_features = np.array(test_row).reshape(1,-1)
-
-    print("########", final_features)
     
     # Make prediction
     prediction = model.predict(final_features)[0]
