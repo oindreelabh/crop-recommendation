@@ -3,7 +3,7 @@ import pickle
 import numpy as np
 
 # Load the trained model
-model_path = 'model.pkl'
+model_path = 'gaussnb_model.pkl'
 with open(model_path, 'rb') as file:
     model = pickle.load(file)
 
@@ -16,8 +16,18 @@ def home():
 @app.route('/predict', methods=['POST'])
 def predict():
     # Extract data from form
-    int_features = [int(x) for x in request.form.values()]
-    final_features = [np.array(int_features).reshape(1,-1)]
+    nitrogen_content = request.form.get("n")
+    phosphorus_content = request.form.get("p")
+    potassium_content = request.form.get("k")
+    temp = request.form.get("temp")
+    humidity = request.form.get("humid")
+    ph_content = request.form.get("ph")
+    rainfall = request.form.get("rain")
+    test_row = [nitrogen_content, phosphorus_content, potassium_content, temp, humidity, ph_content, rainfall]
+    test_row = [float(x) for x in test_row]
+    final_features = np.array(test_row).reshape(1,-1)
+
+    print("########", final_features)
     
     # Make prediction
     prediction = model.predict(final_features)[0]
