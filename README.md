@@ -12,4 +12,4 @@ A Crop Recommender Model using Gaussian Naive Bayes algorithm and flask library 
 
 ### Find the prediction at the bottom of the screen
 
-![alt text](images/Values_entered.png)
+![prediction](images/Predicted_value.png)
